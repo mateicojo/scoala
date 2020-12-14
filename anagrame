@@ -1,0 +1,39 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+
+
+//se citesc 2 cuvinte c1 si c2. Sa se verifice daca c2 este anagrama lui c1. Au aceleasi litere, dar in alta ordine.
+
+void sortare(char a[]) {
+	for (int i = 0; i < strlen(a) - 1; i++) {
+		for (int j = i+1; j < strlen(a); j++) {
+			if (a[i] > a[j]) {
+				char aux = a[j];
+				a[j] = a[i];
+				a[i] = aux;
+			}
+		}
+	}
+}
+
+int main()
+{
+	int ok = 1;
+	char s[256];
+	cin.getline(s, 256);
+	char b[256];
+	cin.getline(b, 256);
+	if (strlen(s) != strlen(b))
+		cout << "Nu este palindrom.";
+	sortare(s);
+	sortare(b);
+	for (int i = 0; i < strlen(s) && ok;i++) {
+		if (s[i] != b[i])
+			ok = 0;
+	}
+	return ok;
+}
+
