@@ -1,0 +1,72 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+// <cstring>
+// Functia de comparare 
+//strlen(s) -> numarul de caractere din sirul s;
+//strcmp(s1,s2) -> returneaza 0 daca s1 si s2 sunt egale.
+//				-> returneaza -1 (sau o val negativa) daca s1<s2 (lexicografic);
+//				-> returneaza 1 (sau o val pozitiva) daca s1>s2 (lexicografic);
+// Ex: char s1[]="Ionescu";
+//     char s2[]="Avram";
+// strcmp(s1,s2) va returna val pozitiva intrucat I are codul ASCII mai mare decat A;
+// stricmp(s1,s2) -> realizeaza compararea celor doua siruri fara a face diferenta intre litera mare si mica;
+// strncmp(s1,s2,n) -> compara primele n caractere din sirul s1 cu primele n caractere din sirul s2;
+// strnicmp(s1,s2,n) -> are acelasi efect ca strncmp fara a face diferente intre majuscule;
+//
+//
+//
+// Functia de copiere:
+//strcpy(s1,s2)-> se copiaza in s1 continutul din s2; -> s1=s2;
+//exista strncpy;
+//
+//
+//
+// Functia de concatenare:
+//strcat(s1,s2) -> adauga sirul s2 la sfarsitul sirului s1;
+//strncat(s1,s2,n) adauga la sfarsitul sirului s1 primele n caractere din sirul s2;
+//
+//
+//
+// Functia de cautare:
+//strchr(s,c) -> c este caracter, s este sir;
+//returneaza pointer catre prima aparitie a caracterului c in sirul s;
+//returneaza NULL in cazul in care nu se gaseste caracterul in sir;
+//ex: strchr("mamaia", 'a');
+//pozitia primei aparitii a caracterului 'a' insirul s;
+//ex: 	char s[] = "mamaia";
+//		cout << strchr(s, 'a') - s; 
+//
+//strrchr(s,c)-> returneaza pointer catre ULTIMA aparitie a caracterului 'c' in sirul s sau NULL;
+//strrchr("mamaia",'m') sva: "maia";
+//strstr(s1,s2) -> functia returneaza pointer catre prima aparitie a sirului s2 in s1 sau NULL;
+//
+//
+//
+// Obtinerea oglinditului unui sir:
+// strrev(s); -> functia va oglindi sirul s; sirul obitnut se salveaza tot in s;
+//
+//
+//
+// Functii de conversie:
+//strlwr(s) -> transforma literele mari in litere mici;
+//strupr(s) -> transforma literele mici in litere mari;
+//
+//
+// <strlib.h>
+// atoi(s) -> converteste sirul in numar intreg (sirul trebuie sa fie format din numere), returneaza 0 daca nu este numar;
+// ex: char s[]="2192" -> atoi(s) -> 2192; a to i || ascii to int;
+// atof(float), atol(long int);
+//
+//
+// ltoa(n, sir, b) -> conversia numarului n de tip longint la sir de caractere, b fiind baza de numeratie; long int to ascii;
+// itoa;
+
+
+
+int main()
+{
+
+}
+
