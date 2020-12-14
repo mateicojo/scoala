@@ -1,0 +1,27 @@
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+
+
+
+//numarul de aparitii ale unei silabe
+
+
+int main()
+{
+	char s[256];
+	char si[3];
+	int ap = 0;
+	cout << "Sirul este: ";
+	cin.getline(s, 256);
+	cout << "Silaba cautata: ";
+	cin.getline(si, 3);
+	for (int i = 0; i < strlen(s) - 1; i++) {
+		if (s[i] == si[0])
+			if (s[i + 1] == si[1])
+				ap++;
+	}
+	cout << ap;
+}
+
