@@ -63,7 +63,33 @@ using namespace std;
 //
 // ltoa(n, sir, b) -> conversia numarului n de tip longint la sir de caractere, b fiind baza de numeratie; long int to ascii;
 // itoa;
+//
+//
+//Functia strtok: permite extragerea subsirurilor de caractere dintr-un sir in functie de valoarea separatorului dintre subsiruri
+//Sintaxa: char *p
+// char s[256];
+// strtok(sir,sir_de_separatori);
+// Functia returneaza pointer catre subsirul din sirul dat pana la valoarea primului separator intalnit
+exemplu:
+#include <iostream>
+#include <cstring>
+using namespace std;
 
+int main()
+{ char s[256],*p,aux[256];
+cin.getline(s,256);
+p=strtok(s," ,");
+//p va contine primul cuvant din sir
+while(p!=NULL)
+{
+    cout<<p<<endl;
+    strcpy(aux,p);
+    //prelucrez aux
+    p=strtok(NULL," ,");
+}
+return 0;
+}
+// Functia de mai sus extrage cuvintele dintr-un text, folosindu-se separatorii " " si ',';
 
 
 int main()
