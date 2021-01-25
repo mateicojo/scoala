@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/bac.txt");
+
+int main()
+{
+	int a[999];
+	int i = 0;
+	int maxx = 9 ;
+	int minn = 100;
+	while (!fin.eof()) {
+		fin >> a[i];
+		if (a[i] > maxx&&a[i]<100)
+			maxx = a[i];
+		if (a[i] < minn&&a[i]>9)
+			minn = a[i];
+		i++;
+	}
+	if (minn != maxx) {
+		cout << --minn << " ";
+		cout << ++maxx;
+	}
+	else
+	{
+		cout << "Nu exista.";
+	}
+
+
+}
