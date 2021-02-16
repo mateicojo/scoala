@@ -1,0 +1,67 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/bac.txt");
+
+int main()
+{
+	struct persoana{
+		char sex;
+		int varsta;
+		int inaltime;
+		int greutate;
+	}grup[100];
+	int medie;
+	int medieb;
+	int medief;
+	int suma = 0;
+	int sumab = 0;
+	int sumaf = 0;
+	float procentajb;
+	float procentajf;
+	float procentajcb;
+	float procentajcf;
+	int femei = 0;
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> grup[i].sex;
+		cin >> grup[i].varsta;
+		cin >> grup[i].inaltime;
+		cin >> grup[i].greutate;
+		suma = suma + grup[i].varsta;
+		if (grup[i].sex == 'b' || grup[i].sex == 'B') {
+			sumab += grup[i].varsta;
+		}
+
+		else {
+			sumaf += grup[i].varsta;
+			femei++;
+		}
+	}
+	int barbatim=0;
+	int nrmedie=0;
+	medie = suma / n;
+	for (int i = 0; i < n; i++) {
+		if (grup[i].varsta > medie) {
+			nrmedie++;
+			if (grup[i].sex == 'b' || grup[i].sex == 'B') {
+				barbatim++;
+			}
+		}
+	}
+	procentajcb = barbatim * 100 / nrmedie;
+	procentajcf = (nrmedie-barbatim) * 100 / nrmedie;
+	medief = sumaf / femei;
+	medieb = sumab / (n - femei);
+	procentajb = (n - femei)*100 / n;
+	procentajf = femei*100 / n;
+	cout << "a : " << procentajb << " " << procentajf<<endl;
+	cout << "b: " << medie << " " << medief << " " << medieb<<endl;
+	cout << "c: " << procentajcf << " " << procentajcb<<endl;
+}
