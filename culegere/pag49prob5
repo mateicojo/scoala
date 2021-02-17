@@ -1,0 +1,55 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/bac.txt");
+
+
+
+int main()
+{
+	struct sportiv {
+		int luna;
+		int an;
+		int varsta;
+	}sportivi[50];
+	int n;
+	cin >> n;
+	int s = 0;
+	int an;
+	int luna;
+	cin >> luna >> an;
+	for (int i = 0; i < n; i++) {
+		cin >> sportivi[i].luna;
+		cin >> sportivi[i].an;
+		sportivi[i].varsta = an - sportivi[i].an;
+		if (luna - sportivi[i].luna > 0)
+			sportivi[i].varsta++;
+		s += sportivi[i].varsta;
+	}
+	int medie = s / n;
+	cout << medie << "\n";
+	int nr = 0;
+	for (int i = 0; i < n; i++) {
+		if (sportivi[i].varsta < medie)
+			cout << sportivi[i].luna << " " << sportivi[i].an << "\n";
+	}
+}
+/*
+date intrare:
+4
+7
+2021
+12
+2002
+7
+2003
+8
+2002
+1
+2002
+*/
