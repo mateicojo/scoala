@@ -1,0 +1,81 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/bac.txt");
+
+
+
+int main()
+{
+	struct elev {
+		char nume[30];
+		char prenume[30];
+		int membrii;
+		float venit;
+	}elevi[30];
+	int m;
+	cin >> m;
+	int l;
+	cin >> l;
+	elev beneficiari[30];
+	int k = 0;
+	for (int i = 0; i < m; i++) {
+		cin.get(elevi[i].nume, 30);
+		cin.get();
+		cin.get(elevi[i].prenume, 30);
+		cin.get();
+		cin >> elevi[i].membrii;
+		cin >> elevi[i].venit;
+		if (elevi[i].venit / elevi[i].membrii >= l) {
+			beneficiari[k++] = elevi[i];
+		}
+	}
+	for (int i = 0; i < k - 2; i++) {
+		for (int j = i + 1; j < k - 1; j++) {
+			if (strcmp(beneficiari[i].nume, beneficiari[j].nume)) {
+				elev aux;
+				aux = beneficiari[i];
+				beneficiari[i] = beneficiari[j];
+				beneficiari[j] = aux;
+			}
+			else {
+				if (strcmp(beneficiari[i].prenume, beneficiari[j].prenume)) {
+					elev aux;
+					aux = beneficiari[i];
+					beneficiari[i] = beneficiari[j];
+					beneficiari[j] = aux;
+				}
+			}
+		}
+		cout << beneficiari[i].nume << " " << beneficiari[i].prenume << "\n";
+	}
+	for (int i = 0; i < m; i++) {
+		cout << beneficiari[i].nume << " " << beneficiari[i].prenume << "\n";
+	}
+}
+/*
+date intrare:
+4
+100
+pop
+alex
+6
+500
+pop
+sara
+7
+600
+stefan
+alex
+4
+400
+dumitru
+andrei
+8
+500
+*/
