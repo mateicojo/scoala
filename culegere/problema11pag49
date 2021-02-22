@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/bac.txt");
+
+//problema 11
+
+int main()
+{
+	struct punct {
+		int x;
+		int y;
+	}puncte[30];
+	int n;
+	cin >> n;
+	for (int i = 0; i < n; i++) {
+		cin >> puncte[i].x;
+		cin >> puncte[i].y;
+	}
+	int maxim=0;
+	for (int i = 0; i < n-1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (puncte[i].y == puncte[j].y)
+				maxim++;
+		}
+	}
+	cout << maxim;
+}
+/*
+date intrare:
+
+*/
