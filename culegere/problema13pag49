@@ -1,0 +1,71 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/in.txt");
+
+//problema 13
+
+int main()
+{
+	struct fractie {
+		int numarator;
+		int numitor;
+		bool red = false;
+	}fractii[30];
+	int n;
+	int aux1=0;
+	int aux2=0;
+	fin >> n;
+	for (int i = 0; i < n; i++) {
+		fin >> fractii[i].numarator;
+		fin >> fractii[i].numitor;
+		aux1 = fractii[i].numarator;
+		aux2 = fractii[i].numitor;
+		while (aux1 != aux2) {
+			if (aux1 > aux2)
+				aux1 -=aux2;
+			else
+				aux2 -=aux1;
+		}
+		if (aux1!=1)
+			fractii[i].red = true;
+	}
+	for (int i = 0; i < n; i++) {
+		if (fractii[i].red==false) {
+			for (int j = i; j < n-1; j++)
+				fractii[j] = fractii[j+1];
+			n--;
+			i--;
+		}
+	}
+	
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+				if (fractii[i].numarator / fractii[i].numitor > fractii[j].numarator / fractii[j].numitor) {
+					fractie aux;
+					aux = fractii[i];
+					fractii[i] = fractii[j];
+					fractii[j]=aux;
+				}
+				else { //daca au acelsi 
+					if (fractii[i].numarator / fractii[i].numitor == fractii[j].numarator / fractii[j].numitor) {
+						if (fractii[i].numarator % fractii[i].numitor > fractii[j].numarator % fractii[j].numitor) {
+							fractie aux;
+							aux = fractii[i];
+							fractii[i] = fractii[j];
+							fractii[j] = aux;
+						}
+					}
+				}
+		}
+	}
+	for (int i = 0; i < n; i++) {
+			cout << fractii[i].numarator << " / " << fractii[i].numitor << endl;
+	}
+
+}
