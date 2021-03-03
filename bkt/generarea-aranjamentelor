@@ -1,0 +1,78 @@
+/*
+Generarea aranjamentelor(conteaza ordinea)
+
+Sa se afiseze toate aranjamentele de n elemente luate cate p
+
+Ex. n=5 p=3
+{1,2,3,4,5}
+
+1 2 3 
+3 2 1 
+2 1 3 
+2 4 5
+etc.
+
+valid: elemente distincte
+solutie: k==p (k incepe de la 1)
+conditia de existenta: x[k]<n
+initializare: k=1; x[k]=0;
+
+
+*/
+
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/in.txt");
+
+int n, p;
+int x[99];
+int w = 0;
+
+int valid(int k) {
+    for (int i = 1; i < k; i++) {
+        if (x[i] == x[k])
+            return 0;
+    }
+    return 1;
+}
+
+int sol(int k) {
+    return k == p;
+}
+
+void afis(int k) {
+    for (int i = 1; i <= k; i++)
+        cout << x[i]<<" ";
+    cout << "\n";
+    w++;
+}
+
+void back(int k) { //se apeleaza back(1);
+    x[k] = 0;
+    while (x[k] < n) {
+        x[k]++;
+        if (valid(k))
+            if (sol(k))
+                afis(k);
+            else
+                back(k + 1);
+    }
+}
+
+
+int main()
+{
+    cout << "n=";
+    cin >> n;
+    cout << "p=";
+    cin >> p;
+    back(1);
+    cout << w;
+    return 0;
+}
