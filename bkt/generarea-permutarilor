@@ -1,0 +1,16 @@
+/*
+Generarea permutarilor:
+Sa se afiseze toate combinarile de n elemente luate cate p
+
+Ex. n=5 p=3
+
+1 2 3 
+2 3 4 
+3 4 5
+....
+
+valid:ordonate strict crescator;
+solutie: k==p
+conditia de existenta: x[k]<n;
+initializare: k=1;x[k]=0;
+*/
