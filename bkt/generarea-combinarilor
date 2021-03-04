@@ -1,0 +1,77 @@
+/*
+Generarea combinarilor:
+Sa se afiseze toate combinarile de n elemente luate cate p
+
+Ex. n=5 p=3
+
+1 2 3 
+2 3 4 
+3 4 5
+....
+
+valid:ordonate strict crescator;
+solutie: k==p
+conditia de existenta: x[k]<n;
+initializare: k=1;x[k]=0;
+*/
+
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/in.txt");
+
+int n, p;
+int x[100];
+int valid(int k)
+{
+        if (x[k-1] >= x[k])
+            return 0;
+    return 1;
+}
+int sol(int k)
+{
+    return k == p;
+}
+void tipar(int k)
+{
+    cout << "Solutie: ";
+    for (int i = 1; i <= k; i++)
+        cout << x[i] << " ";
+    cout << endl;
+}
+void back(int k)
+{
+    k = 1; x[k] = 0;
+    while (k > 0)
+        if (x[k] < n)
+        {
+            x[k] = x[k] + 1;
+            if (valid(k))
+                if (sol(k))
+                    tipar(k);
+                else
+
+
+            else
+
+            {
+                k++; x[k] = 0;
+            }
+        }
+        else
+            k--;
+
+}
+int main()
+{
+    cout << "n=";
+    cin >> n;
+    cout << "p="; cin >> p;
+    back(1);
+    return 0;
+}
