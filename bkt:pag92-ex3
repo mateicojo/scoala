@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/in.txt");
+
+int n, p;
+int x[99];
+int w = 0;
+
+int valid(int k) {
+    for (int i = 1; i < k; i++) {
+        if (x[i] == x[k])
+            return 0;
+    }
+    return 1;
+}
+
+int sol(int k) {
+    return k == p;
+}
+
+void afis(int k) {
+    for (int i = 1; i <= k; i++)
+        cout << x[i] << " ";
+    cout << "\n";
+    w++;
+}
+
+void back(int k) { //se apeleaza back(1);
+    x[k] = 11;
+    while (x[k] > 1) {
+        x[k]=x[k]-2;
+        if (valid(k))
+            if (sol(k))
+                afis(k);
+            else
+                back(k + 1);
+    }
+}
+
+int main()
+{
+    cout << "n=";
+    cin >> n;
+    cout << "p=";
+    cin >> p;
+    back(1);
+    cout << w;
+    return 0;
+}
+
+//date intrare:
+//10
+//n
