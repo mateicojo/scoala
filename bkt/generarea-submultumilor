@@ -1,0 +1,74 @@
+Fie v o multime cu n elemente. Sa se afiseze toate submultimile multimii v.
+v={1,5,8,9}
+{1},{5},{8},{9}
+{1,5},{1,8},{1,8}
+{5,8},{5,9}
+{8,9}
+{1,5,8}....
+
+valid: avem cel putin 2 elemente (p ul a ajuns la valoarea 2), iar elemente sunt ordonate crescator si diferite;
+solutie: daca avem p elemente; p ul creste de la 1 la n (numarul de elemente ale multimii principale)
+
+
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/in.txt");
+
+int  p, n;
+int x[99];
+int w = 0;
+int v[99];
+
+int valid(int k) {
+    if (k >= 2 && v[x[k - 1]] >= v[x[k]])
+        return 0;
+    return 1;
+}
+
+int sol(int k) {
+    return k == p;
+}
+
+void afis(int k) {
+    for (int i = 1; i <= k; i++)
+        cout << v[x[i]] << " ";
+    cout << "\n";
+    w++;
+}
+
+void back(int k) {
+    x[k] = -1;
+    while (x[k] < n - 1) {
+        x[k]++;
+        if (valid(k))
+            if (sol(k))
+                afis(k);
+            else
+                back(k + 1);
+    }
+}
+
+int main()
+{
+    cout << "n=";
+    cin >> n;
+    cout << "multimea: ";
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+
+    for (int i = 1; i <= n; i++)// in acest for p ul se schimba de la 1 la n si generam combinari de n luate cate p pentru fiecare p;
+    {
+        p = i;// se schimba valoarea p ului;
+        cout << "submultimi cu " << i << " elemente: "<<"\n";
+        back(1);// se genereaza submultimile cu p elemente;
+    }
+    cout <<"numarul de submultimi generate: " <<w;
+    return 0;
+}
