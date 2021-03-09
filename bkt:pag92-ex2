@@ -1,0 +1,75 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/in.txt");
+
+int  p, n;
+int x[99];
+int w = 0;
+int v[99];
+int s;
+
+int valid(int k) {
+    if (k >= 2 && v[x[k - 1]] >= v[x[k]])
+        return 0;
+    return 1;
+}
+
+int sol(int k) {
+    int q = 0;
+    if (k == p) {
+        for (int i = 1; i <= p; i++)
+           q += v[x[i]];
+        if (q == s)
+            return 1;
+    }
+    return 0;
+}
+
+void afis(int k) {
+    for (int i = 1; i <= k; i++)
+        cout << v[x[i]] << " ";
+    cout << "\n";
+    w++;
+}
+
+void back(int k) {
+    x[k] = -1;
+    while (x[k] < n - 1) {
+        x[k]++;
+        if (valid(k))
+            if (sol(k))
+                afis(k);
+            else
+                back(k + 1);
+    }
+}
+
+int main()
+{
+    cout << "n=";
+    cin >> n;
+    cout << "multimea: ";
+    for (int i = 0; i < n; i++) {
+        cin >> v[i];
+    }
+
+    cout << "s=";
+    cin >> s;
+
+    for (int i = 1; i <= n; i++)
+    {
+        p = i;
+        cout << "submultimi cu " << i << " elemente: "<<"\n";
+        back(1);
+    }
+    cout <<"numarul de submultimi generate: " <<w;
+    return 0;
+}
+
+//n = 6 multimea{ 1,2,3,5,7,8 } s = 11
