@@ -1,0 +1,59 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/in.txt");
+
+int n, p;
+int x[99];
+int w = 0;
+
+int modul(int k){
+    if (x[k - 1] > x[k])
+        return x[k - 1] - x[k];
+    else
+        return x[k] - x[k - 1];
+}
+
+int valid(int k) {
+    if (modul(k) != 1)
+        return 0;
+    return 1;
+}
+
+int sol(int k) {
+    return k == n;
+}
+
+void afis(int k) {
+    for (int i = 1; i <= k; i++)
+        cout << x[i] << " ";
+    cout << "\n";
+    w++;
+}
+
+void back(int k) { //se apeleaza back(1);
+    x[k] = -1;
+    while (x[k] < 9 && k<=n) {
+        x[k]++;
+        if (valid(k))
+            if (sol(k))
+                afis(k);
+            else
+                back(k + 1);
+    }
+}
+
+
+int main()
+{
+    cout << "n=";
+    cin >> n;
+    back(1);
+    cout << w;
+    return 0;
+}
