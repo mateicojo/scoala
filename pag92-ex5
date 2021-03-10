@@ -53,7 +53,7 @@ void afis(int k) {
 
 void back(int k) {
     x[k] = 0;
-    while (x[k] < 4) {
+    while (x[k] < 4 && k<n) {
         x[k]++;
         if (valid(k))
             if (sol(k))
