@@ -12,16 +12,17 @@ int n, p;
 int x[99];
 int w = 0;
 
+
 int valid(int k) {
-    for (int i = 1; i < k; i++) {
-        if (x[i] == x[k])
-            return 0;
-    }
+    if (k >= 2 && x[k - 1] < x[k])
+        return 0;
+    if (k == 1&&x[k]==0)
+        return 0;
     return 1;
 }
 
 int sol(int k) {
-    return k == p;
+    return k == n;
 }
 
 void afis(int k) {
@@ -32,9 +33,9 @@ void afis(int k) {
 }
 
 void back(int k) { //se apeleaza back(1);
-    x[k] = 11;
+    x[k] = 10;
     while (x[k] > 1) {
-        x[k]=x[k]-2;
+        x[k] = x[k] - 2;
         if (valid(k))
             if (sol(k))
                 afis(k);
@@ -47,13 +48,10 @@ int main()
 {
     cout << "n=";
     cin >> n;
-    cout << "p=";
-    cin >> p;
     back(1);
     cout << w;
     return 0;
 }
 
 //date intrare:
-//10
 //n
