@@ -11,64 +11,32 @@ ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/in.txt");
 int n;
 int x[99];
 int w = 0;
+int pd = 0;
+int pi = 0;
+
+int numara(int k,int val) {
+	int nr = 0;
+	for (int i = 1; i <= k; i++) {
+		if (x[i] == val)
+			nr++;
+	}
+	return nr;
+}
 
 
 //1: '(' (()()  1212  1122 12112212    ()(())() ((((((() ()()(()) 
 //2: ')'
 
 int valid(int k) {
+	if (numara(k,2) > numara(k,1))
+		return 0;
+	if (numara(k,1) > n / 2)
+		return 0;
 	return 1;
 }
-/*
-int sol(int k) {
-	if (k == n) {
-		for (int i = 1; i < n; i++) {
-			if (x[i] == 1) {
-				for (int j = i + 1; j <= n; j++) {
-					if (x[j] == 2)
-						break;
-					if (j == n)
-						return 0;
-				}
-			}
-		}
-		return 1;
-	}
-	return 0;
-}*/
-/*
-for (int i = 1; i < n; i++) {
-			if (x[i] == 1) {
-				if (pos == -1) {
-					pos = i;
-				}
-				for (int j = pos + 1; j <= n; j++) {
-					if (x[j] == 2)
-						pos = j;
-						break;
-					if (j == n)
-						return 0;
-				}
-			}
-		}
-		return 1;
-*/
 
 int sol(int k) {
-	if (k == n) {
-		int pd = 0;
-		int pi = 0;
-		for (int i = 1; i <= n; i++) {
-			if (pd < pi)
-				return 0;
-			if (x[i] == 1)
-				pd++;
-			else
-				pi++;
-		}
-		return pd == pi;
-	}
-	return 0;
+	return k==n && numara(k,1)==numara(k,2);
 }
 
 void afis(int k) {
