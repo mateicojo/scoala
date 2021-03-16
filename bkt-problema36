@@ -1,0 +1,51 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+
+int n;
+int x[99];
+int w = 0;
+
+int valid(int k) {
+    if (k >= 2 && x[k - 1] == 1 && x[k - 1] == x[k])
+        return 0;
+    return 1;
+}
+
+int sol(int k) {
+    return k == n;
+}
+
+void afis() {
+    for (int i = 1; i <= n; i++) {
+        cout << x[i] <<" ";
+    }
+    cout << "\n";
+    w++;
+}
+
+void back(int k) {
+    x[k] = -1;
+    while (k <= n && x[k]<1) {
+        x[k]++;
+        if (valid(k))
+            if (sol(k))
+                afis();
+            else
+                back(k + 1);
+    }
+}
+
+int main()
+{
+    cout << "n= ";
+    cin >> n;
+    back(1);
+    cout << w;
+    return 0;
+}
