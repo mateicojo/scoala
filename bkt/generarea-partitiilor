@@ -1,0 +1,14 @@
+Fie n un numar natural. Sa se afiseze toate modalitatile de scriere a lui n ca suma de numere naturale.
+Ex. n=4
+1+1+1+1
+1+1+2
+1+3
+2+2
+3+1
+
+Valid: suma(k) <= n;
+       verificam daca elementele sunt ordonate crescator:
+       if(k>=2 && x[k-1]<=x[k];
+Solutie: suma(k)==n;
+Conditie de existenta: x[k]<n-1;(x[k]++ la inceputul while ului)
+
