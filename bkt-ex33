@@ -2,55 +2,56 @@
 #pragma warning(disable:4996)
 using namespace std;
 
-int n, p;
-int x[99];
-int w = 0;
-int suma(int k) {
-    if (k == 1)
-        return x[k];
-    return x[k] + suma(k - 1);
+unsigned n, x[100];
+int w=0;
+int suma(int k)
+{
+    int s=0;
+    for(int i=1;i<=k;i++)
+        s=s+x[i];
+    return s;
 }
-
-int valid(int k) {
-    if (suma(k) > n)
+int valid(int k)
+{
+    if(suma(k)>n)
         return 0;
-    if (k >= 2 && x[k - 1] >= x[k])
+    if(k>=2&&x[k-1]>x[k])
+        return 0;
+    if(x[k]!=3&&x[k]!=5)
         return 0;
     return 1;
 }
-
-int sol(int k) {
-    return suma(k) == n && p == k;
+int sol(int k)
+{
+    return suma(k)==n;
 }
-
-void afis(int k) {
-    for (int i = 1; i < k; i++) {
-        cout << x[i] << " + ";
-    }
-    cout << x[k];
-    cout << "\n";
-    w++;
+void tipar(int k)
+{
+    cout<<"Solutie: ";
+    for(int i=1;i<=k-1;i++)
+        cout<<x[i]<<"+";
+    cout<<x[k];
+    cout<<"\n";
 }
-
-void back(int k) {
-    x[k] = 0;
-    while (x[k] < n - 1) {
+void back(int k)
+{
+    x[k]=0;
+    while(x[k]<n-1)
+    {
         x[k]++;
-        if (valid(k))
-            if (sol(k))
-                afis(k);
-            else
-                back(k + 1);
+        if(valid(k))
+            if(sol(k))
+                {
+                    tipar(k);
+                    w++;
+                }
+            else back(k+1);
     }
 }
-
 int main()
 {
-    cout << "n= ";
-    cin >> n;
-    cout << "p=";
-    cin >> p;
+    cout << "n=";cin>>n;
     back(1);
-    cout << w;
+    cout<<"Numarul de solutii: "<<w;
     return 0;
 }
