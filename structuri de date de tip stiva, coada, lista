@@ -1,0 +1,12 @@
+definitie:
+Stiva este o structura de date in care atat adaugarea cat si extragerea elementelor se face de la un singur capat numit varful stivei.
+definitie:
+Coada este o structura de date in care adaugarea unui element se face dupa ultimul element iar extragerea se face de pe prima pozitie.
+definitie:
+Lista este o structura de date in care adaugarea, respectiv extragerea elementelor se poate face pe orice pozitie.
+Observatie:
+Implementarea structurilor de tip lista, stiva, coada, se poate face static cu ajutorul vectorilor, sau folosind alocare dinamica a memoriei cu ajutorul pointerilor.
+
+Coada -> structura de date de tip FIFO: First Input, First Output;
+Stiva -> structura de date de tip LIFO: Last Input, First Output;
+
