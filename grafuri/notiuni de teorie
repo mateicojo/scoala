@@ -1,0 +1,68 @@
+Notiuni de teorie a grafurilor. Grafuri neorientate.
+
+Definitie:
+Se numeste graf neorientat perechea G=(X, U), unde X este o multime finita si nevida numita multimea varfurilor (nodurilor), 
+iar U este formata din perechi neordonate de elemente din X, numita multimea muchiilor; 
+dpdv grafic, varfurile se reprezinta cu ajutorul punctelor, iar muchiile cu ajutorul segmentelor de dreapta. 
+
+ex.
+G=(X,U)
+X=(1,2,3,4,5,6);
+U={[1,3],[2,4],[1,5],[3,5]}
+
+Teorema:
+Numarul de grafuri neorientate care pot fi construite cu n varfuri este 2^(combinari de n luate cate 2)
+
+Daca [x1,x2](extremitatile muchiei x1,x2) este o muchie in graful G, vom spune ca nodurile x1, x2 sunt adiacente, iar muchia [x1,x2] este incidenta in varful x1, respectiv x2.
+
+Definitie:
+Definim gradul unui varf x ca fiind numarul de muchii incidente in varful x. Gradul se noteaza cu d(x);
+
+ex.
+G=(X,U)
+X=(1,2,3,4,5,6);
+U={[1,3],[2,4],[1,5],[3,5]}
+
+d(2) = 1;
+d(5) = 2;
+d(6) = 0;
+
+Definitie:
+Se numeste nod izolat un nod cu gradul 0;
+
+ex. 6 este nod izolat in exemplul de mai sus
+
+Se numeste nod terminal, un nod cu gradul 1;
+
+ex. 2 sau 4;
+
+Teorema:
+Intr-un graf neorientat cu n varfuri si m muchii, suma gradelor tuturor nodurilor este egala cu dublul numarului de muchii.
+
+Consecinta:
+Intr-un graf neorientat, numarul nodurilor de grad impar este un numar par.
+
+Definitie:
+Se numeste graf complet un graf in care oricare 2 varfuri sunt adiacente.
+
+Obs.
+Numarul de muchii a unui graf complet cu n noduri este n*(n-1)/2
+
+Definitie:
+Se numeste graf nul, un graf in care multimea muchiilor este vida.
+
+Definitie:
+Se numeste graf regulat, un graf in care toate nodurile au acelasi grad.
+
+Definitie:
+Fie G=(X,U) un graf neorientat. Se numeste graf partial al grafului G, graful G1=(X,U1) cu U1 inclus in U.
+
+Teorema:
+Numarul de grafuri partiale ale unui graf cu m muchii este 2^m.
+
+Definite:
+Fie G=(X,U) un graf neorientat. Se numeste subgraf al grafului G, graful G1=(X1,U1) cu X1 inclus in X, iar U1 este 
+formata din acele muchii din U care au ambele extremitati incluse in X1.
+
+Teorema:
+Numarul de subgrafuri ale unui graf cu n noduri este 2^(n-1).
