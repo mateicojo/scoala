@@ -1,0 +1,11 @@
+def: Se numeste lant succesiunea de varfuri x1, x2, ... , xk cu proprietatea ca oricare 2 noduri xi, xi+1 (cu i de la 1 la k-1) sunt adiacente.
+
+Daca exista un lant in care varfurile sunt distincte, se numeste lant elementar.(Nu trece de 2 ori prin acelasi nod)
+
+Un lant in care muchiile sunt distincte poarta denumirea de lant simplu.
+
+Se numeste ciclu un lant in care extremitatea finala coincide cu extremitatea initiala.
+
+Ciclu elementar: un ciclu in care nodurile sunt distincte cu exceptia extremitatii initiale si a extremitatii finale.
+
+Lungimea unui ciclu/lant este data de numarul de muchii din cadrul acesteia.
