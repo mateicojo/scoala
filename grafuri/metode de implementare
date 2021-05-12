@@ -1,0 +1,17 @@
+Matricea de adiacenta:
+a[i][j] ia valori de 1 si 0: 1 daca exista muchie intre nodul i si j, sau 0 daca nu exista.
+Matricea de adiacenta a unui graf neorientat are urmatoarele proprietati:
+Diagonala principala are toate elementele egale cu 0.
+Matricea este simetrica fata de diagonala principala.
+Gradul unui nod X este dat de nr de valori de 1 sau de suma elementelor de pe linia sau coloana X.
+
+Matricea de incidenta:
+-Are numarul de linii egal cu numarul de noduri.
+-Numarul de coloane egal cu numarul de muchii.
+Este definita in modul urmator:
+Se numeroteaza muchiile grafului si se aseaza in locul coloanelor;
+B[i][j] = 1, daca i este extremitate a muchiei j, altfel 0;
+pe fiecare coloana sunt doua valori de 1: cele doua extremitati ale muchiei.
+
+Vectorul de muchii:
+v[i]-> contine muchia i a grafului.
