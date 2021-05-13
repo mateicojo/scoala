@@ -1,2 +1,5 @@
 Fie G=(X,U) un graf.
 Graful G este conex daca intre oricare 2 noduri ale grafului exista un lant.
+
+
+Se numeste componenta conexa un subgraf conex al lui G maximal in raport cu conditia de conexitate.(cel mai mare subgraf conex din graf se numeste componenta conexa)
