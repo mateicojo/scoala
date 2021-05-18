@@ -1,2 +1,6 @@
 definitie: Se numeste ciclu eulerian un ciclu care contine toate muchiile grafului.
 definitie: Se numeste graf eulerian un graf care contine un ciclu eulerian.
+
+Teorema de caracterizare:
+Fie G=(X, U) un graf neorientat care nu contine noduri izolate.
+G este eulerian <=> G este conex si gradele tuturor varfurilor sunt numere pare.
