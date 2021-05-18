@@ -2,3 +2,9 @@ Se numeste ciclu hamiltonian, un ciclu elementar care trece prin toate varfurile
 Se numeste graf hamiltonian un graf care contine un ciclu hamiltonian.
 
 Orice graf complet este hamiltonian.
+
+Teorema de caracterizare:
+Daca G=(X, U) este un graf neorientat cu cel putin 3 noduri in care d(x) (gradul oricarui varf) este mai mic sau egal cu n/2 
+atunci G este hamiltonian (n reprezinta numarul de noduri).
+
+Reciproca acestei teoreme nu este adevarata!
