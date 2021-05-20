@@ -1,0 +1,23 @@
+Se numeste graf orientat perechea G=(X, U) unde X este o multime finita si nevida numita multimea nodurilor, iar U este multimea din perechi ordonate de 
+elemente din X, numita multimea arcelor.
+Daca avem arc de la x la y si de la y la x se numeste arc dublu.
+Un arc de forma (X1, X1) poarta denumirea de bucla.
+Daca (X1, X2) apartine lui U atunci X1 se numeste extremitate initiala, X2 este extremitate finala.
+
+Teorema:
+Numarul de grafuri orientate care se pot construi cu n noduri este 4 la puterea combinari de n luate cate 2.
+
+Un graf orientat este complet daca oricare 2 noduri sunt adiacente. (nu trebuie sa fie arce duble)
+
+Gradele:
+Definim gradul exterior al nodului x, notat cu d+(x) ca fiind numarul de arce care au extremitatea initiala in nodul x.
+
+Definim gradul interior al nodului x, notat cu d-(x) ca fiind numarul de arce care au extremitatea finala in nodul x.
+
+Se numeste nod izolat un nod X cu proprietatea ca d+(x) + d-(x) = 0;
+
+Se numeste nod terminal un nod X cu proprietatea ca d+(x)+d-(x)=1;
+
+Teorema:
+Fie G = (X, U) un graf orientat cu n noduri si m arce.
+Suma gradelor exterioare ale tuturor nodurilor este egala cu suma gradelor interioare ale tuturor nodurilor si este egala cu numarul de arce.
