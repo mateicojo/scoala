@@ -1,0 +1,13 @@
+Se numeste lant succesiunea de noduri, cu proprietatea ca nodurile consecutive sunt adiacente;
+Un lant cu nodurile distincte se numeste lant elementar.
+Un lant cu arcele distincte poarta denumirea de lant simplu.
+
+Se numeste drum, un lant in care toate arcele au aceiasi orientare.
+Notiunile de drum elementar, respectiv drum simplu, se definesc analog cu definitiile de la lant elementar, lant simplu.
+
+Se numeste circuit, un drum simplu in care extremitatea initiala coincide cu extremitatea finala.
+Un circuit in care nodurile sunt distincte cu exceptia primului si ultimului nod poarta denumirea de circuit elementar.
+
+Un graf este conex daca intre oricare doua noduri x1, x2 exista un lant.
+
+Fie G = (X, U) un graf orientat. Vom spune ca graful G este tare conex daca intre oricare 2 noduri x1, x2 exista drum de la x1 la x2 si de la x2 la x1.
