@@ -1,0 +1,25 @@
+matricea de adiacenta:
+a[i][j] = 1, daca exista arc de la i la j sau 0 altfel
+in cazul grafurilor orientate, matricea de adiacenta nu este simetrica fata de diagonala principala
+d+(x) [gradul exterior] a gradului x reprezinta suma liniei x din matrice;
+d-(x) [gradul interior] a gradului x reprezinta suma coloanei x din matrice;
+
+liste de adiacenta:
+L+ = lista succesorilor
+L- = lista predecesorilor
+
+L+(x) = multimea succesorilor nodului x, daca x are succesori
+L-(x) = multimea predecesorilor nodului x, daca x are predecesori
+
+Matricea de incidenta:
+B[i][j] = 1 daca i este extremitate initiala pentru arcul j, -1 daca i este extremitate finala pentru arcul j, 0 altfel;
+1<i<n (nr de noduri)
+1<j<m (nr de arce)
+
+Pentru a implementa vectorul de arce, vom folosi un vector cu elemente de tip struct, care va contine 2 campuri: extremitatea initiala si extremitatea finala, a fiecarui arc.
+
+Din fisierul date.in se citesc: 
+n- numarul de noduri
+m- numarul de arce
+iar de pe urmatoarele m linii arcele unui graf orientat;
+Construiti vectorul de arce, dupa care verificati daca graful contine bucle sau arce duble.
