@@ -1,0 +1,22 @@
+Algoritmul lui Roy-Warshall permite construirea unei matrici definita in modul urmator:
+D[i][j]=1, daca i!=j si exista drum de la i la j, si 0 daca i=j sau nu exista drum de la i la j;
+Vom reprezenta graful prin intermediul matricii de adiacenta.
+
+Prezentarea algoritmului:
+1. Se copiaza matricea de adiacenta in matricea drumurilor;
+2. Se iau pe rand toate nodurile k si se incearca obtinerea unui drum de la nodul i la nodul j (in cazul in care nu exista deja) prin intermediul nodului k.
+
+
+for (int i=1;i<=n;i++)
+  for(int j=1;j<=n;j++)
+      D[i][j]=A[i][j];
+for (int k=1;k<=n;k++)
+  for(int i=1;i<=n;i++)
+    for(int j=1;j<=n;j++)
+      if(i!=k && j!=j && i!=j)
+        if(!D[i][j])
+          if(D[i][j] && D[k][j])
+            D[i][j]=1;
+
+Din fisierul graf.in se citesc numarul de noduri n, numarul de arce m si arcele unui graf orientat.
+Sa se verifice daca in graful dat exista drum de la nodul 1 la nodul n;
