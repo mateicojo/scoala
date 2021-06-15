@@ -1,0 +1,7 @@
+Se numeste arbore un graf neorientat conex si fara cicluri.
+Teorema de caracterizare a arborilor:
+Fie G un graf neorientat.Urmatoarele afirmatii sunt echivalente:
+- G arbore
+- G conex minimal(prin eliminarea oricarei muchii, graful obtinut nu va fi conex)
+- G fara cicluri maximale(prin adaugarea oricarei muchii, graful obtinut contine cicluri)
+- G graf conex cu n-1 muchii
