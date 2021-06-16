@@ -1,0 +1,11 @@
+se numeste arbore cu radacina un arbore in care exista un nod cu destinatie speciala, numit radacina, iar celelalte noduri pot fi grupate in seturi disjuncte cu proprietatea
+ca fiecare set este la randul sau arbore.
+
+Nodurile care nu au succesori directi poarta denumirea de noduri frunza, sau noduri terminale. Inaltimea unui arbore este data de lungimea drumului maxim 
+care leaga nodul radacina de un nod terminal.
+Observatie: Un arbore cu radacina in care fiecare nod are maxim 2 succesori, poarta denumirea de arbore binar.
+Intr-un arbore binar se face distinctie intre succesorul stang si succesorul drept.
+
+Reprezentarea arborilor cu radacina cu ajutorul vectorului de tati.
+T[i] = 0 daca i este nod radacina, tatal nodului i altfel.
+Nodurile frunza nu se regasesc in vectorul de tati.
