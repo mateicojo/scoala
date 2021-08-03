@@ -1,0 +1,52 @@
+sub 3 
+1.
+int divPrim(int n, int &s) {
+	s = 0;
+	int d = 2;
+	while (n > 1) {
+		int exp = 0;
+		while (n % d == 0) {
+			n /= d;
+			exp++;
+
+		}
+		if (exp % 2 == 1)
+			s += d;
+		d++;
+	}
+	return s;
+}
+
+2.
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+using namespace std;
+
+
+int main()
+{
+	unsigned n;
+	unsigned k;
+	unsigned x = 0;
+	cin >> n >> k;
+	char a[11];
+	while(n){
+		if (x != k) {
+			char copie[11];
+			cin >> a;
+			strcpy(copie, a);
+			strcpy(a, a + strlen(a) - 1);
+			if (strspn(a, "aeiou")) {
+				x++;
+				cout << copie << endl;
+			}
+		}
+		n--;
+	}
+	if (x != k)
+		cout << "nu exista!";
+
+}
