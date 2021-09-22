@@ -1,0 +1,43 @@
+Limbajul Visual Fox Studio este un limbaj de programare utilizat pentru gestionarea bazelor de date.
+Lansarea in executie se face prin lansarea in executie a fisierului vfp9.exe.
+Setul de caractere cuprinde litere mari si mici ale alfabetului englez, cifrele de la 0 la 9 si caracterele speciale.
+
+Identificatori:
+sunt utilizati pentru a desemna variabile, fisiere, subprograme sau nume de campuri.
+identificatorii folositi pentru variabile sau denumiri ale campurilor sunt formati din litere, cifre sau underline primul caracter fiind obligatoriu litera,
+lungimea max a identificatorului fiind de 10 caractere
+in cazul identificatorilor utilizati pentru subprograme sau fisiere, pot fi utilizate orice caractere cu exceptia caracterelor: "?, >, *, .";
+
+Cuvintele rezervate sunt identificatori care nu pot fi utilizati in alt context decat cel stabilit.
+Cuvintele rezervate desemnezaza nume de comenzi, functii.
+Orice cuvant rezervat poate fi prescurtat la primele 4 caractere.
+display -> disp
+modify structure -> modi stru
+
+Tipuri de date:
+numerice, caracter, sir de caracter, logice, date calendaristice, memo
+
+
+Constantele numerice se exprima in format zecimal.
+Constantele de tip caractere pot fi cuprinse intre: " ", ' ', [ ];
+Constantele de tip logice: .T. = true, .F. = false;
+Constantele de tip data calendaristica se precizeaza intre acolade { }, si au urmatorul format:
+{^aaaa/ll/zz}
+
+Operatori
+a) Operatori aritmetici:
++,-,*,/,%,**(ridicare la putere),
+b) Operatori relationali:
+<,<=,>=,!=,=,
+c) Operatori logici:
+NOT, AND, OR
+d) Operatori pentru siruri de caractere:
+$,+,-
+
+
+Moduri de lucru:
+Aplicatia vfp pune la dispozitia utilizatorului doua moduri de lucru:
+a) Modul de lucru comanda(permite rularea imediata a unei comenzi)
+b) Modul de lucru program(permite scrierea codului sursa a unui program si rularea ulterioara a acestuia)
+Programele realizate in vfp au extensia .prg, iar tabelele sunt fisiere cu extensia .dbf
+Modul de lucru implicit este modul comanda.
