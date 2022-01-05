@@ -1,0 +1,33 @@
+/*problema 4: http://bacinfo.cnlr.ro/subiecte-bac/2009/e_info_intensiv_c_siii_095.pdf*/
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication1/bac.txt");
+ofstream fout("C:/Users/mok_a/Desktop/wordlist.txt");
+
+
+
+int main()
+{
+	int s;
+	int r;
+	int d;
+	cin >> s;
+	r = s % 3;
+	d = s / 3;
+	if (r == 2) {
+		cout << d << " " << d+1 << " " << d + 1;
+	}
+	if (r == 1) {
+		cout << d << " " << d << " " << d + 1;
+	}
+	if (r == 0) {
+		cout << d << " " << d << " " << d;
+	}
+
+}
