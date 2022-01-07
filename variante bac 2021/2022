@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("C:/Users/mok_a/source/repos/ConsoleApplication2/bac.txt");
+ofstream fout("C:/Users/mok_a/Desktop/wordlist.txt");
+int main()
+{
+    int x;
+    int n = 0;
+    int i = 0;
+    int st[10];
+    int dr[10];
+    for (int i = 0; i < 10; i++) {
+        st[i] = -1;
+        dr[i] = -1;
+    }
+    int lungmax = 0;
+    while (fin >> x) {
+        if (x % 2 == 0) {
+            if (st[x] != -1) {
+                dr[x] = n;
+                if (dr[x] - st[x] > lungmax)
+                    lungmax = dr[x] - st[x]+1;
+            }
+            else
+                st[x] = n;
+        }
+        n++;
+    }
+    cout << lungmax<<'\n';
+    for (int i = 0; i < 10; i++) {
+        if (dr[i] - st[i]+1 == lungmax) {
+            cout << i<<" ";
+        }
+    }
+}
