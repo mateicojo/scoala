@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("c:/users/mok_a/source/repos/consoleapplication2/bac.txt");
+ofstream fout("C:/Users/mok_a/Desktop/wordlist.txt");
+
+int suma(unsigned n) {
+    int sp = 0;
+    int si = 0;
+    while (n != 0) {
+        if (n % 10 % 2 == 0) {
+            sp += n % 10;
+        }
+        else
+        {
+            si += n % 10;
+        }
+        n /= 10;
+    }
+    if (si == sp)
+        return 1;
+    else
+        return 0;
+}
+
+int main()
+{
+    unsigned n;
+    int minim = 9999999;
+    int na = 0;
+    while (fin >> n) {
+        if (n == minim) {
+            na++;
+        }
+        else
+            if (suma(n) && n < minim) {
+                minim = n;
+                na = 1;
+            }
+    }
+    cout << minim << " " << na;
+}
