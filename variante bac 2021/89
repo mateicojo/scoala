@@ -1,0 +1,33 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("c:/users/mok_a/source/repos/consoleapplication2/bac.txt");
+ofstream fout("C:/Users/mok_a/Desktop/wordlist.txt");
+
+
+
+int main()
+{
+    unsigned v[100] = {0};
+    unsigned k;
+    cin >> k;
+    unsigned a;
+    unsigned ultimul = 0;
+    while (fin >> a) {
+        if(a>k)
+            v[a]++;
+        if (a > ultimul) {
+            ultimul = a;
+        }
+    }
+    for (unsigned i = ultimul; i > k; i--) {
+        if (v[i]) {
+            cout << i<<" ";
+        }
+    }
+}
