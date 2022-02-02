@@ -1,0 +1,41 @@
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <fstream>
+#pragma warning(disable:4996)
+
+
+using namespace std;
+ifstream fin("c:/users/mok_a/source/repos/consoleapplication2/bac.txt");
+ofstream fout("C:/Users/mok_a/Desktop/wordlist.txt");
+
+
+
+int main()
+{
+	int smax=0;
+	int difmax = 0;
+	int a;
+	int b;
+	int amax;
+	int bmax;
+	fin >> a;
+	while (fin >> b) {
+		if (a>=0 && b >= 0) {
+			if (a + b > smax) {
+				smax = a + b;
+				amax = a;
+				bmax = b;
+			}
+			if (a + b == smax) {
+				if ((a > b && a - b > difmax) || (a<b && b - a>difmax)) {
+					difmax = a - b;
+					amax = a;
+					bmax = b;
+				}
+			}
+		}
+		a = b;
+	}
+	cout << amax <<" "<< bmax;
+}
