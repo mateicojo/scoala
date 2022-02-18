@@ -1,0 +1,69 @@
+//sub 3
+//problema 1
+#include <iostream>
+using namespace std;
+
+void generatoare(int n) {
+	for (int a = 0; a < n; a+=2) {
+		for (int b = 1; b < n;b++) {
+			if (a * b + (a / b) == n) {
+				cout << a << "-" << b<<'\n';
+			}
+		}
+	}
+}
+
+//problema 2
+#include <iostream>
+using namespace std;
+int main()
+{
+	int a[20][20];
+	int m, n;
+	int nrc = 0;
+	cin >> m >> n;
+	for (int i = 0; i < m; i++) {
+		for (int j = 0; j < n; j++) {
+			cin >> a[i][j];
+		}
+	}
+	for (int c = 1; c < n; c++) {
+		int ok = 1;
+		int i = 0;
+		while (ok && i < m) {
+			if (a[i][0] == a[i][c])
+				ok == 0;
+			i++;
+		}
+		if (ok == 1)
+			nrc++;
+	}
+	cout << nrc;
+}
+
+//problema 3
+#include <iostream>
+#include <fstream>
+using namespace std;
+ifstream fin("bac.txt");
+int main()
+{
+	int a, b, c,d;
+	fin >> a >> b>>c;
+	while (fin >> d) {
+		if (b == c && a != b && c != d) {
+			cout << b<<" ";
+		}
+		a = b;
+		b = c;
+		c = d;
+	}
+	if (b==c && a!=b) {
+		cout << c<<" ";
+	}
+}
+/*programul citeste 4 numere si verifica daca cele 2 doua numere din mijloc sunt egale intre ele in timp ce sunt diferite de cele 2 de pe margini,
+caz in care perechea de numere din mijloc este valida si se afiseaza al doilea numar. Apoi, numerele se interschimba intre ele astfel: primul devine 
+al doilea, al doilea devine al treilea, al treilea devine al patrulea, iar al patrulea este citit din fisier.
+Eficienta programului consta in faptul ca parcurgem sirul de numere o singura data si profitam de faptul ca numerele din fisier sunt deja ordonate descrescator pentru a evita
+sortarea lor inainte de afisare.*/
